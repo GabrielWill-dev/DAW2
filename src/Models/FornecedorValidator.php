@@ -37,7 +37,7 @@ class FornecedorValidator
                 $result = false;
             }
         }
-        if (is_null($fornecedor->getTipoPessoa())) {
+        if ($fornecedor->getTipoPessoa()==0){
             $this->addError('tipopessoa', 'Campo TIPO PESSOA não pode ser vazio!');
             $result = false;
         }

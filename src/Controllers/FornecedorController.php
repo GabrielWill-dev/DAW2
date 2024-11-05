@@ -85,7 +85,7 @@ class FornecedorController  extends Controller
         $url = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]";
         $escaped_url = htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' );
         $corpoEmail = "Olá <b>".$fornecedor->getNome()."</b>, sua conta no SisFin foi criada com sucesso";
-        $corpoEmail .= "<br>Clique <a href=https://pretuwill.github.io/meu-site/index.html>aqui</a> para começar a explorar o sistema!";
+        $corpoEmail .= "<br>Clique <a href=https://GabrielWill-dev.github.io/meu-site/index.html>aqui</a> para começar a explorar o sistema!";
         $email = new EnviaEmail();
         $email->setDestino($fornecedor->getEmail());
         $email->setAssunto('Conta criada no SisFin');
