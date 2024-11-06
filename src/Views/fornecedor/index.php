@@ -53,7 +53,7 @@ if (!isset($state))
             </div>
         </div>
 
-        <div class="row p-3">
+        <div class="row p-2">
             <div class="col-3">
                 <div class="input-group">
                     <label class="input-group-text" for="inputGroupSelect01">Tipo Pessoa</label>
@@ -81,7 +81,6 @@ if (!isset($state))
                         placeholder="Razão Social" value="<?= $state->getRazaoSocial(); ?>">
                 </div>
             </div>
-
             <div class="col-3">
                 <div class="input-group flex-nowrap">
                     <span class="input-group-text" id="rua">Rua</span>
@@ -89,70 +88,71 @@ if (!isset($state))
                         placeholder="Digite a rua..." value="<?= $state->getRua(); ?>">
                 </div>
             </div>
+        </div>
+        <div class="row p-2">
             <div class="col-2">
                 <div class="input-group flex-nowrap">
-                <span class="input-group-text" id="numero">Numero</span>
-                    <input class="form-control" class="form-control" type="number" class="form-control" id="numero"
+                    <span class="input-group-text">Numero</span>
+                    <input class="form-control" type="text" class="form-control" class="form-control" id="numero"
                         name="numero" placeholder="Digite seu numero..." value="<?= $state->getNumero(); ?>">
                 </div>
             </div>
-            <div class="col-3">
-            <div class="input-group flex-nowrap">
-                    <label for="bairro">Bairro:</label>
+            <div class="col-2">
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text">Bairro</span>
                     <input class="form-control" type="text" class="form-control" id="bairro" name="bairro"
-                        placeholder="Bairro" value="<?= $state->getBairro(); ?>">
+                        placeholder="Digite seu bairro..." value="<?= $state->getBairro(); ?>">
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text">Cidade</span>
+                    <input class="form-control" type="text" class="form-control" id="cidade" name="cidade"
+                        placeholder="Digite sua cidade..." value="<?= $state->getCidade(); ?>">
                 </div>
             </div>
 
             <div class="col-3">
-            <div class="input-group flex-nowrap">
-                    <label for="cidade">Cidade:</label>
-                    <input class="form-control" type="text" class="form-control" id="cidade" name="cidade"
-                        placeholder="Cidade" value="<?= $state->getCidade(); ?>">
-                </div>
-            </div>
-        </div>
-        <div class="row p-2">
-            <div class="col-4">
-            <div class="input-group flex-nowrap">
-                    <label for="complemento">Complemento:</label>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text">Complemento</span>
                     <input class="form-control" type="text" class="form-control" id="complemento" name="complemento"
-                        placeholder="Complemento" value="<?= $state->getComplemento(); ?>">
+                        placeholder="Complemento..." value="<?= $state->getComplemento(); ?>">
                 </div>
             </div>
             <div class="col-2">
-                <div class="form-group">
-                    <label for="cep">CEP:</label>
-                    <input class="form-control" type="text" class="form-control" id="cep" name="cep" placeholder="CEP"
-                        value="<?= $state->getCep(); ?>">
-                </div>
-
-            </div>
-            <div class="col-3">
-                <div class="form-group">
-                    <label for="telefone">Telefone:</label>
-                    <input class="form-control" type="text" class="form-control" id="telefone" name="telefone"
-                        placeholder="Telefone" value="<?= $state->getTelefone(); ?>">
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text">CEP</span>
+                    <input class="form-control" type="text" class="form-control" id="cep" name="cep"
+                        placeholder="CEP..." value="<?= $state->getCep(); ?>">
                 </div>
             </div>
+            <div class="row p-2">
+                <div class="col-3">
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text">Telefone</span>
+                        <input class="form-control" type="text" class="form-control" id="telefone" name="telefone"
+                            placeholder="Telefone..." value="<?= $state->getTelefone(); ?>">
+                    </div>
+                </div>
 
-            <div class="col-3">
-                <div class="form-group">
-                    <label for="celular">Celular:</label>
-                    <input class="form-control" type="text" class="form-control" id="celular" name="celular"
-                        placeholder="Celular" value="<?= $state->getCelular(); ?>">
+                <div class="col-3">
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text">Celular</span>
+                        <input class="form-control" type="text" class="form-control" id="celular" name="celular"
+                            placeholder="Celular..." value="<?= $state->getCelular(); ?>">
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <br>
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary">Atualizar</button>
-            <a href="/fornecedor" class="btn btn-primary">Voltar</a>
-        </div>
+            <br>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Atualizar</button>
+                <a href="/fornecedor" class="btn btn-primary">Voltar</a>
+            </div>
     </form>
 
-    <br>
+    
 
     <table class="table">
         <thead>
@@ -197,7 +197,9 @@ if (!isset($state))
         </tbody>
     </table>
     <br>
-    <a href="/" class="btn btn-primary">Home</a>
+   <div class="text-center">
+   <a href="/" class="btn btn-primary">Home</a>
+   </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
