@@ -147,12 +147,12 @@ if (!isset($state))
 
             <br>
             <div class="text-center">
-                <button type="submit" class="btn btn-primary">Atualizar</button>
+                <button type="submit" class="btn btn-primary">Adicionar</button>
                 <a href="/fornecedor" class="btn btn-primary">Voltar</a>
             </div>
     </form>
 
-    
+
 
     <table class="table">
         <thead>
@@ -160,10 +160,9 @@ if (!isset($state))
 
                 <th scope="col">Nome</th>
                 <th scope="col">CPF/CNPJ</th>
-                <th scope="col">Razão Social</th>
                 <th scope="col">Email</th>
                 <th scope="col">Telefone</th>
-                <th scope="col">Tipo</th>
+                <th scope="col">Tipo Pessoa</th>
                 <th scope="col">Eliminar</th>
                 <th scope="col">Alterar</th>
             </tr>
@@ -177,15 +176,18 @@ if (!isset($state))
                     <tr>
                         <td><?= $fornecedor["nome"] ?></td>
                         <td><?= $fornecedor["cpf_cnpj"] ?></td>
-                        <td><?= $fornecedor["razao_social"] ?></td>
                         <td><?= $fornecedor["email"] ?></td>
                         <td><?= $fornecedor["telefone"] ?></td>
                         <td><?php
                         echo $fornecedor["tipopessoa"] == 1 ? "Pessoa Física" : "Pessoa Jurídica"
                             ?></td>
                         <td><span>
-                                <a class="btn btn-danger" href="/fornecedor/delete/?id=<?= $fornecedor["id"] ?>">
-                                    <i class="fas fa-minus-circle"></i></span></a></td>
+                                <a class="btn btn-danger" href="/fornecedor/delete/?id=<?= $fornecedor["id"] ?>"
+                                    onclick="return confirm('Tem certeza que deseja excluir este fornecedor?');">
+                                    <i class="fas fa-minus-circle"></i>
+                                </a>
+                            </span></td>
+
                         <td><span>
                                 <a class="btn btn-warning" href="/fornecedor/edit/?id=<?= $fornecedor["id"] ?>">
                                     <i class="fas fa-edit"></i></span></td>
@@ -197,9 +199,9 @@ if (!isset($state))
         </tbody>
     </table>
     <br>
-   <div class="text-center">
-   <a href="/" class="btn btn-primary">Home</a>
-   </div>
+    <div class="text-center">
+        <a href="/" class="btn btn-primary">Home</a>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
